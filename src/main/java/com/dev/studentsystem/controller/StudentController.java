@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/student")
+@CrossOrigin
 public class StudentController {
     @Autowired
     private StudentService studentService;
@@ -18,7 +19,7 @@ public class StudentController {
         studentService.saveStudent(student);
         return "New Student has added";
     }
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public List<Student> list(){
         return studentService.getAllStudents();
     }
